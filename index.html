@@ -109,22 +109,150 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/gs_videos/v1.mp4"
-                type="video/mp4">
-      </video>
 
+
+
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered ">
+        <h3 class="title is-3 ">Overview of SpikeGS</h3>
+      </div>
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/gs_videos/v1.mp4"
+                  type="video/mp4">
+        </video>
+  
+      </div>
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered ">
+      <div class="column ">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified ">
+          <p>
+            3D Gaussian Splatting (3DGS) has been proven to exhibit exceptional performance in reconstructing 3D scenes. However,
+            the effectiveness of 3DGS heavily relies on sharp images, and
+            fulfilling this requirement presents challenges in real-world
+            scenarios particularly when utilizing fast-moving cameras.
+            This limitation severely constrains the practical application of
+            3DGS and may compromise the feasibility of real-time reconstruction. To mitigate these challenges, we proposed Spike
+            Gaussian Splatting (SpikeGS), the first framework that integrates the Bayer-pattern spike streams into 3DGS pipeline to
+            reconstruct 3D scenes captured by a fast-moving high temporal color spike camera in one second. 
+            With accumulation rasterization, interval supervision, and a specially designed pipeline, 
+            SpikeGS realizes continuous spatiotemporal
+            perception and extracts detailed geometry and texture from
+            Bayer-pattern spike stream which is unstable and lacks details. 
+            Extensive experiments on multiple synthetic 
+            and real-world datasets demonstrate the superiority of SpikeGS 
+            compared with existing spike-based and deblur 3D scene reconstruction methods. 
+            Codes and data will be released at anonymous link: https://spikegs.github.io.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      
+    <div class="columns is-centered ">
+      <!-- <h3 class="title is-3 ">Overview of SpikeGS</h3> -->
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/framework.png"
+        class="interpolation-image"
+        style="width: 100%; object-fit:cover;"
+      alt="Interpolate start reference image."/>
+    </div>
+
+    <div class="content has-text-justified">
+      <p>
+        We first reconstruct Bayer-pattern spike streams into spike intervals and spike accumulation. Unlike 3DGS, we adopt spike intervals to initialize SFM points, camera poses, and Gaussian
+        splats. We then embed the time accumulation process into the rasterizer to calibrate the colorization while maintaining multi-view
+        consistency. By progressively optimizing the 3DGS parameters using an accumulation loss and an interval loss, our method
+        facilitates high-quality 3DGS reconstruction.
+      </p>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+
+
+<!-- table -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+
+    <div class="columns is-centered has-text-centered">
+      <h3 class="title is-3 ">Comparison With Baselines</h3>
+    </div>
+    <div class="content has-text-centered" >
+      <img src="./static/images/baselinetable.png"
+        class="interpolation-image"
+        style="width: 100%; object-fit:cover;"
+      alt="Interpolate start reference image."/>
+    </div>
+    <!-- <div class="content has-text-justified">
+      <p>
+        Quantitative comparisons of novel view synthesis on synthetic datasets. The best and second-best performances are
+        respectively highlighted in bold and underscored with an underline. Our SpikeGS demonstrates the best NVS quality.
+      </p>
+    </div> -->
+
+    </div>
+  </div>
+</section>
+
+<!-- compare -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=eebceb06-5530-11ef-9396-d93975fe8866"></iframe>
+        </div>
+        <div class="item item-chair-tp">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=872f377c-5531-11ef-9396-d93975fe8866"></iframe>
+        </div>
+        <div class="item item-shiba">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=10f15e9a-5532-11ef-9396-d93975fe8866"></iframe>
+        </div>
+        <div class="item item-fullbody">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=eebceb06-5530-11ef-9396-d93975fe8866"></iframe>
+        </div>
+        <div class="item item-blueshirt">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=872f377c-5531-11ef-9396-d93975fe8866"></iframe>
+        </div>
+        <div class="item item-mask">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=10f15e9a-5532-11ef-9396-d93975fe8866"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Real-worldd results  -->
+<!-- is-light -->
+<section class="hero  is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h3 class="title is-3 ">Real-world results</h3>
+      </div>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
@@ -172,107 +300,6 @@
     </div>
   </div>
 </section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            3D Gaussian Splatting (3DGS) has been proven to exhibit exceptional performance in reconstructing 3D scenes. However,
-            the effectiveness of 3DGS heavily relies on sharp images, and
-            fulfilling this requirement presents challenges in real-world
-            scenarios particularly when utilizing fast-moving cameras.
-            This limitation severely constrains the practical application of
-            3DGS and may compromise the feasibility of real-time reconstruction. To mitigate these challenges, we proposed Spike
-            Gaussian Splatting (SpikeGS), the first framework that integrates the Bayer-pattern spike streams into 3DGS pipeline to
-            reconstruct 3D scenes captured by a fast-moving high temporal color spike camera in one second. 
-            With accumulation rasterization, interval supervision, and a specially designed pipeline, 
-            SpikeGS realizes continuous spatiotemporal
-            perception and extracts detailed geometry and texture from
-            Bayer-pattern spike stream which is unstable and lacks details. 
-            Extensive experiments on multiple synthetic 
-            and real-world datasets demonstrate the superiority of SpikeGS 
-            compared with existing spike-based and deblur 3D scene reconstruction methods. 
-            Codes and data will be released at anonymous link: https://spikegs.github.io.
-          </p>
-          
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-  </div>
-</section>
-
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=eebceb06-5530-11ef-9396-d93975fe8866"></iframe>
-        </div>
-        <div class="item item-chair-tp">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=872f377c-5531-11ef-9396-d93975fe8866"></iframe>
-        </div>
-        <div class="item item-shiba">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=10f15e9a-5532-11ef-9396-d93975fe8866"></iframe>
-        </div>
-        <div class="item item-fullbody">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=eebceb06-5530-11ef-9396-d93975fe8866"></iframe>
-        </div>
-        <div class="item item-blueshirt">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=872f377c-5531-11ef-9396-d93975fe8866"></iframe>
-        </div>
-        <div class="item item-mask">
-          <iframe frameborder="0" class="juxtapose" width="100%" height="440" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=10f15e9a-5532-11ef-9396-d93975fe8866"></iframe>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <h3 class="title is-3 ">Overview of SpikeGS</h3>
-    </div>
-    <div class="content has-text-centered">
-      <img src="./static/images/framework.png"
-        class="interpolation-image"
-      alt="Interpolate start reference image."/>
-    </div>
-
-    <div class="content has-text-justified">
-      <p>
-        We first reconstruct Bayer-pattern spike streams into spike intervals and spike accumulation. Unlike 3DGS, we adopt spike intervals to initialize SFM points, camera poses, and Gaussian
-        splats. We then embed the time accumulation process into the rasterizer to calibrate the colorization while maintaining multi-view
-        consistency. By progressively optimizing the 3DGS parameters using an accumulation loss and an interval loss, our method
-        facilitates high-quality 3DGS reconstruction.
-      </p>
-    </div>
-
-
-    <div class="columns is-centered has-text-centered">
-      <h3 class="title is-3 ">Baseline</h3>
-    </div>
-    <div class="content has-text-centered">
-      <img src="./static/images/baselinetable.png"
-        class="interpolation-image"
-      alt="Interpolate start reference image."/>
-    </div>
-  </div>
-</section>
-
-
 
 
 <footer class="footer">
