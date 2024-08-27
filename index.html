@@ -242,7 +242,33 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h3 class="title is-3 ">Overview of SpikeGS</h3>
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/framework.png"
+        class="interpolation-image"
+      alt="Interpolate start reference image."/>
+    </div>
 
+    <div class="content has-text-justified">
+      <p>
+        We first reconstruct Bayer-pattern spike streams into spike intervals and spike accumulation. Unlike 3DGS, we adopt spike intervals to initialize SFM points, camera poses, and Gaussian
+        splats. We then embed the time accumulation process into the rasterizer to calibrate the colorization while maintaining multi-view
+        consistency. By progressively optimizing the 3DGS parameters using an accumulation loss and an interval loss, our method
+        facilitates high-quality 3DGS reconstruction.
+      </p>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <h3 class="title is-3 ">Baseline</h3>
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/baselinetable.png"
+        class="interpolation-image"
+      alt="Interpolate start reference image."/>
+    </div>
   </div>
 </section>
 
